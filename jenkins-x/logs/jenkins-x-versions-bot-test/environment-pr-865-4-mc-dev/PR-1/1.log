@@ -1,0 +1,97 @@
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-n66d5-1[0m stage [32mpr-checks[0m and container [32mstep-credential-initializer-lzq64[0m
+{"level":"warn","ts":1583839072.0014884,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583839072.0023572,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-n66d5-1[0m stage [32mpr-checks[0m and container [32mstep-working-dir-initializer-9w8ck[0m
+{"level":"warn","ts":1583839072.960918,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583839072.962028,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-n66d5-1[0m stage [32mpr-checks[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-n66d5-1[0m stage [32mpr-checks[0m and container [32mstep-git-source-jenkins-x-versions-bot-test-env-n66d5-shx5c[0m
+{"level":"warn","ts":1583839079.07359,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583839080.277873,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/***************************/environment-pr-865-4-mc-dev.git @ master in path /workspace/source"}
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-n66d5-1[0m stage [32mpr-checks[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:3225fcd2a8fc86739a1e0fa588ca362e929a7ade,1:6a4a4a317f9104dae3ed39dd3113e3e7606464c5
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 6a4a4a317f9104dae3ed39dd3113e3e7606464c5: 3225fcd2a8fc86739a1e0fa588ca362e929a7ade:
+DEBUG: ran git fetch --unshallow origin 6a4a4a317f9104dae3ed39dd3113e3e7606464c5: 3225fcd2a8fc86739a1e0fa588ca362e929a7ade: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 3225fcd2a8fc86739a1e0fa588ca362e929a7ade
+DEBUG: ran git reset --hard 3225fcd2a8fc86739a1e0fa588ca362e929a7ade in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git merge 6a4a4a317f9104dae3ed39dd3113e3e7606464c5
+DEBUG: ran git merge 6a4a4a317f9104dae3ed39dd3113e3e7606464c5 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 3225fcd2a8fc86739a1e0fa588ca362e929a7ade..HEAD
+Merged SHA 6a4a4a317f9104dae3ed39dd3113e3e7606464c5 with commit message 'chore(deps): bump https://github.com/***************************/bdd-gh-1583839015.git' into base branch master
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-n66d5-1[0m stage [32mpr-checks[0m and container [32mstep-create-helmfile[0m
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-n66d5-1[0m stage [32mpr-checks[0m and container [32mstep-lint-helmfile-system[0m
+Adding repo stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Fetching stable/nginx-ingress
+Linting release=nginx-ingress, chart=/tmp/156330309/nginx-ingress/1.33.4/stable/nginx-ingress/nginx-ingress
+==> Linting /tmp/156330309/nginx-ingress/1.33.4/stable/nginx-ingress/nginx-ingress
+
+1 chart(s) linted, 0 chart(s) failed
+
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-n66d5-1[0m stage [32mpr-checks[0m and container [32mstep-lint-helmfile-apps[0m
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Building dependency release=repositories, chart=../repositories
+Fetching jenkins-x/**boot-helmfile-resources
+Fetching jenkins-x/nexus
+Fetching jenkins-x/lighthouse
+Fetching jenkins-x/tekton
+Fetching jenkins-x/chartmuseum
+Linting release=**boot-helmfile-resources, chart=/tmp/038295686/**boot-helmfile-resources/0.0.85/jenkins-x/**boot-helmfile-resources/**boot-helmfile-resources
+==> Linting /tmp/038295686/**boot-helmfile-resources/0.0.85/jenkins-x/**boot-helmfile-resources/**boot-helmfile-resources
+
+1 chart(s) linted, 0 chart(s) failed
+
+Linting release=nexus, chart=/tmp/038295686/nexus/latest/jenkins-x/nexus/nexus
+==> Linting /tmp/038295686/nexus/latest/jenkins-x/nexus/nexus
+
+1 chart(s) linted, 0 chart(s) failed
+
+Linting release=lighthouse, chart=/tmp/038295686/lighthouse/0.0.480/jenkins-x/lighthouse/lighthouse
+==> Linting /tmp/038295686/lighthouse/0.0.480/jenkins-x/lighthouse/lighthouse
+
+1 chart(s) linted, 0 chart(s) failed
+
+Linting release=tekton, chart=/tmp/038295686/tekton/0.0.48/jenkins-x/tekton/tekton
+==> Linting /tmp/038295686/tekton/0.0.48/jenkins-x/tekton/tekton
+
+1 chart(s) linted, 0 chart(s) failed
+
+Linting release=chartmuseum, chart=/tmp/038295686/chartmuseum/latest/jenkins-x/chartmuseum/chartmuseum
+==> Linting /tmp/038295686/chartmuseum/latest/jenkins-x/chartmuseum/chartmuseum
+
+1 chart(s) linted, 0 chart(s) failed
+
+Linting release=repositories, chart=../repositories
+==> Linting ../repositories
+[INFO] Chart.yaml: icon is recommended
+[INFO] values.yaml: file does not exist
+
+1 chart(s) linted, 0 chart(s) failed
+
